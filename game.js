@@ -1,32 +1,12 @@
 //player
-let player;
-function Player(raceType, attack, defence, mana, speed, health) {
-    this.raceType = raceType;
-    this.attack = attack;
-    this.defence = defence;
-    this.mana = mana;
-    this.speed = speed; 
-    this.health = health;
-    }
-    //enemy
-function Enemy(raceType, attack, defence, mana, speed, health) {
-    this.raceType = raceType;
-    this.attack = attack;
-    this.defence = defence;
-    this.mana = mana;
-    this.speed = speed; 
-    this.health = health;
-    }   
-let attackStat = Player.attack;
 
-
-
+    //enemy=
 let GameInit = {
     startGame: function(raceType){
         this.setPlayer(raceType);
         this.chProfile(raceType);
         
-    }
+                                }
            ,setPlayer: function(raceType) {
                 switch(raceType) {
             case "nord":
@@ -71,6 +51,52 @@ let GameInit = {
                  document.getElementById('argonianBio').style.display = 'block'; break;  
                 };
 
+            }
+            ,setFight1: function(raceType){
+                document.getElementById('interface').style.display = 'none';
+                document.getElementById('fight-scene').style.display = 'block';
+                switch(raceType) {
+            case "nord":
+                 document.getElementById('avatarImg').src = 'img/nord.png';
+                 break;
+            case "high-elf":
+                 document.getElementById('avatarImg').src = 'img/high-elf.png';
+                 break;
+            case "dark-elf":
+                 document.getElementById('avatarImg').src = 'img/dark-elf.png'; break;
+            case "wood-elf":
+                 document.getElementById('avatarImg').src = 'img/wood-elf.png'; break;
+            case "breton": 
+                 document.getElementById('avatarImg').src = 'img/breton.png'; 
+                 break;
+            case "khajiit":
+                 document.getElementById('avatarImg').src = 'img/khajiit.png'; break;
+            case "orc" : 
+                 document.getElementById('avatarImg').src = 'img/orc.png'; 
+                 break;
+            case "argonian" :
+                 document.getElementById('avatarImg').src = 'img/argonian.png'; break;  
+                };
+                //create enemy
+            let enemy00 = new Enemy("bear", 80, 10, 0, 20, 230)
+            let enemy01 = new Enemy("assassin", 80, 10, 0, 20, 230)
+            let enemy02 = new Enemy("draugr", 80, 10, 0, 20, 230)
+                //random select enemy
+            let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(3));
+            switch (chooseRandomEnemy) {
+                case 0:
+                    enemy = enemy00;
+                    document.getElementById('enemyImg1').src = 'img/bear.png';
+                    break;
+                    enemy = enemy01;
+                    document.getElementById('enemyImg1').src = 'img/draugr.png';
+                    break;
+                    enemy = enemy02;
+                    document.getElementById('enemyImg1').src = 'img/assassin.png';
+                    break;
+            }
+            
+            
             }                
         
         

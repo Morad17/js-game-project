@@ -7,7 +7,9 @@ img {
     
 }
 
-
+* {
+  box-sizing: border-box;
+}
 
 #characterMenu {}
 
@@ -42,9 +44,14 @@ img {
 #orcBio {
     display: none;
 }
+#fight-scene {
+    display: none;
+}
 
+#arena1 {
+    width:500px;
 
-
+}
 .border {
 margin-left: 20px;
 margin-top: 20px;

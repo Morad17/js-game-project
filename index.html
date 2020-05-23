@@ -75,17 +75,16 @@
 
 <div id="interface">
     <section class="container">
-        <a href="#" onclick="">
         <h2 >Do you wish to pick:</h2> 
-        </a>
+        
         <div id="nordBio">
             <img src="img/nord.png" >
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>      
+            <button onclick="GameInit.setFight1('nord')">Lets Go!</button>
         </div>
         <div id="highElfBio">
             <img src="img/high-elf.png" >
@@ -94,7 +93,7 @@
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <button onclick="GameInit.setFight1('high-elf')">Lets Go!</button>
         </div>
         <div id="darkElfBio">
             <img src="img/dark-elf.png" >
@@ -103,7 +102,7 @@
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <button onclick="GameInit.setFight1('dark-elf')">Lets Go!</button>
         </div>
         <div id="woodElfBio">
             <img src="img/wood-elf.png" >
@@ -112,7 +111,7 @@
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <button onclick="GameInit.setFight1('wood-elf')">Lets Go!</button>
         </div>
         <div id="bretonBio">
             <img src="img/breton.png" >
@@ -121,7 +120,7 @@
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <button onclick="GameInit.setFight1('breton')">Lets Go!</button>
         </div>
         <div id="khajiitBio">
             <img src="img/khajiit.png" >
@@ -130,7 +129,7 @@
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <button onclick="GameInit.setFight1('khajiit')">Lets Go!</button>
         </div>
         <div id="argonianBio">
             <img src="img/argonian.png" >
@@ -139,7 +138,7 @@
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <button onclick="GameInit.setFight1('argonian')">Lets Go!</button>
         </div>
         <div id="orcBio">
             <img src="img/orc.png" >
@@ -148,13 +147,31 @@
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            
+            <button onclick="GameInit.setFight1('orc')">Lets Go!</button>
         </div>
     </section>
-    < 
+    
 </div>
 
-<div id="fight-scene"></div>
+<div id="fight-scene" class="row">
+    <div class="col-12">
+<h2>Snow Dungeon</h2>
+<p>You enter a dungeon where the outside is filled with snow, but you
+cant see what is inside...</p>
+</div>
+
+<div class="col-12">
+<img id="avatarImg" src="" >
+<img id="arena1" src="img/snow-dungeon.jpg">
+<img id="enemyImg1" src="">
+</div>
+<div class="col-12">
+<button onclick="" >Fight</button>
+<button onclick="" >Run</button> 
+</div>
+
+
+</div>
 
 </body>
 </html>     
