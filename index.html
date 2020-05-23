@@ -3,52 +3,158 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="game.js"></script>
+    <script src="player.js"></script>
+    <script src="enemy.js"></script>
 </head>   
-<body> 
+<body>   
+<!--characters-->
+<div id="characterMenu">
     <h2>Choose your fighter!</h2>
-  
+
     <div class="border">   
     <div class="container"> 
+        <a href="#" onclick="GameInit.startGame('nord')">
         <h4>Nord</h4> 
-        <img src="img/nord.png">
-    </div>
+        
+        <img src="img/nord.png" >
+        </a>
+    </div> 
     <div class="container">
+        <a href="#" onclick="GameInit.startGame('dark-elf')">
         <h4>Dark Elf</h4>
         <img src="img/dark-elf.png">
+        </a>
     </div>
     <div class="container">
+        <a href="#" onclick="GameInit.startGame('wood-elf')">
         <h4>Wood Elf</h4>
         <img src="img/wood-elf.png">   
-    
+        </a>
     </div>    
     <div class="container">
+        <a href="#" onclick="GameInit.startGame('argonian')">
         <h4>Argonian</h4> 
         <img src="img/argonian.png"> 
+        </a>
     </div> 
     </div>
 
     <div class="border">   
     <div class="container">
+        <a href="#" onclick="GameInit.startGame('high-elf')">
         <h4>High Elf</h4>
         <img src="img/high-elf.png">
+        </a>
     </div>
     <div class="container">
+        <a href="#" onclick="GameInit.startGame('khajiit')">
         <h4>Khajiit</h4>
         <img src="img/khajiit.png">
+        </a>
     </div>
     <div class="container">
+        <a href="#" onclick="GameInit.startGame('orc')">
         <h4>Orc</h4>
-        <img src="img/orc.png">   
+        <img src="img/orc.png">
+        </a>   
     
     </div>    
     <div class="container">
+        <a href="#" onclick="GameInit.startGame('breton')" >
         <h4>Breton</h4> 
-        <img src="img/breton.png">
+        <img src="img/breton.png" >
+        </a>
     </div>
-    </div>                
+    </div> 
+</div>
+
+<div id="interface">
+    <section class="container">
+        <a href="#" onclick="">
+        <h2 >Do you wish to pick:</h2> 
+        </a>
+        <div id="nordBio">
+            <img src="img/nord.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+        <div id="highElfBio">
+            <img src="img/high-elf.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+        <div id="darkElfBio">
+            <img src="img/dark-elf.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+        <div id="woodElfBio">
+            <img src="img/wood-elf.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+        <div id="bretonBio">
+            <img src="img/breton.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+        <div id="khajiitBio">
+            <img src="img/khajiit.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+        <div id="argonianBio">
+            <img src="img/argonian.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+        <div id="orcBio">
+            <img src="img/orc.png" >
+            <p>Health <i class="fa fa-arrow-up"></i></p>
+            <p>Attack <i class="fa fa-arrow-up"></i></p>
+            <p>Defense<i class="fa fa-arrow-up"></i></p>
+            <p>Mana   <i class="fa fa-arrow-down"></i></p>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p>
+            
+        </div>
+    </section>
+    < 
+</div>
+
+<div id="fight-scene"></div>
+
 </body>
-</html>    
+</html>     

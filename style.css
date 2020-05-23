@@ -2,15 +2,53 @@ body {
     background-image: url("img/background.jpg");
     background-color: #cccccc;
 }
-.border {
-margin-left: 20px;
-margin-top: 20px;
-}
 img {
     width:200px;
     
 }
 
+
+
+#characterMenu {}
+
+#interface {
+    display:none;
+}
+#interface h2{
+    text-align:center;
+}
+/* ------------- Character Bio ------------- */
+#nordBio {
+    display: none;
+}
+#highElfBio {
+    display: none;
+}
+#darkElfBio {
+    display: none;
+}
+#woodElfBio {
+    display: none;
+}
+#bretonBio {
+    display: none;
+}
+#khajiitBio {
+    display: none;
+}
+#argonianBio {
+    display: none;
+}
+#orcBio {
+    display: none;
+}
+
+
+
+.border {
+margin-left: 20px;
+margin-top: 20px;
+}
 .container {
     display:inline-block;
     margin-left: 20px;
