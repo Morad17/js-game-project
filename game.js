@@ -1,12 +1,12 @@
-//player
 
-    //enemy=
+//Start Game
 let GameInit = {
     startGame: function(raceType){
         this.setPlayer(raceType);
         this.chProfile(raceType);
         
                                 }
+            //Choose Player
            ,setPlayer: function(raceType) {
                 switch(raceType) {
             case "nord":
@@ -14,11 +14,11 @@ let GameInit = {
             case "high-elf":
                 player = new Player(raceType, 100, 30, 0, 40, 200);
             case "dark-elf":
-                player = new Player(raceType, 100, 30, 0, 40, 200);
+                player = new Player(raceType, 10, 30, 90, 40, 200);
             case "wood-elf":
                 player = new Player(raceType, 100, 30, 0, 40, 200);
             case "breton": 
-                player = new Player(raceType, 100, 30, 0, 40, 200);
+                player = new Player(raceType, 0, 30, 1, 40, 200);
             case "khajiit":
                 player = new Player(raceType, 100, 30, 0, 40, 200);
             case "orc" : 
@@ -26,7 +26,7 @@ let GameInit = {
             case "argonian" :
                 player = new Player(raceType, 100, 30, 0, 40, 200);
                             };          }
-
+            //Character Bio
             ,chProfile: function(raceType){
                 document.getElementById('characterMenu').style.display = 'none';
                 document.getElementById('interface').style.display = 'inline-block';
@@ -35,26 +35,27 @@ let GameInit = {
                  document.getElementById('nordBio').style.display = 'inline-block';
                  break;
             case "high-elf":
-                 document.getElementById('highElfBio').style.display = 'block';
+                 document.getElementById('highElfBio').style.display = 'inline-block';
                  break;
             case "dark-elf":
-                 document.getElementById('darkElfBio').style.display = 'block'   ; break;
+                 document.getElementById('darkElfBio').style.display = 'inline-block'   ; break;
             case "wood-elf":
-                 document.getElementById('woodElfBio').style.display = 'block'; break;
+                 document.getElementById('woodElfBio').style.display = 'inline-block'; break;
             case "breton": 
-                 document.getElementById('bretonBio').style.display = 'block'; break;
+                 document.getElementById('bretonBio').style.display = 'inline-block'; break;
             case "khajiit":
-                 document.getElementById('khajiitBio').style.display = 'block'; break;
+                 document.getElementById('khajiitBio').style.display = 'inline-block'; break;
             case "orc" : 
-                 document.getElementById('orcBio').style.display = 'block'; break;
+                 document.getElementById('orcBio').style.display = 'inline-block'; break;
             case "argonian" :
-                 document.getElementById('argonianBio').style.display = 'block'; break;  
+                 document.getElementById('argonianBio').style.display = 'inline-block'; break;  
                 };
 
             }
+            //Initiate Fight Scene
             ,setFight1: function(raceType){
                 document.getElementById('interface').style.display = 'none';
-                document.getElementById('fight-scene').style.display = 'block';
+                document.getElementById('fight-scene1').style.display = 'inline-block';
                 switch(raceType) {
             case "nord":
                  document.getElementById('avatarImg').src = 'img/nord.png';
@@ -78,26 +79,36 @@ let GameInit = {
                  document.getElementById('avatarImg').src = 'img/argonian.png'; break;  
                 };
                 //create enemy
-            let enemy00 = new Enemy("bear", 80, 10, 0, 20, 230)
-            let enemy01 = new Enemy("assassin", 80, 10, 0, 20, 230)
+            let enemy00 = new Enemy("bear", 70, 10, 0, 20, 230)
+            let enemy01 = new Enemy("assassin", 90, 10, 0, 20, 230)
             let enemy02 = new Enemy("draugr", 80, 10, 0, 20, 230)
+             
                 //random select enemy
-            let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(3));
+            let chooseRandomEnemy = Math.floor(Math.random() * 3);
             switch (chooseRandomEnemy) {
                 case 0:
                     enemy = enemy00;
                     document.getElementById('enemyImg1').src = 'img/bear.png';
+                    
                     break;
+                case 1:
                     enemy = enemy01;
                     document.getElementById('enemyImg1').src = 'img/draugr.png';
                     break;
+                case 2:
                     enemy = enemy02;
                     document.getElementById('enemyImg1').src = 'img/assassin.png';
                     break;
+
+                    
             }
             
-            
-            }                
+            }, proceed1: function() {
+                document.getElementById("fight-scene1").style.display = 'none';
+                document.getElementById("treasureScene").style.display = 'block';
+
+            }
+
         
         
         

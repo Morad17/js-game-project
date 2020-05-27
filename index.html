@@ -7,84 +7,82 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <script src="game.js"></script>
-    <script src="player.js"></script>
-    <script src="enemy.js"></script>
+    
 </head>   
-<body>   
+<body> 
+<!--------Home Page--->  
 <!--characters-->
 <div id="characterMenu">
     <h2>Choose your fighter!</h2>
+   
+    <div class="row">    
 
-    <div class="border">   
-    <div class="container"> 
         <a href="#" onclick="GameInit.startGame('nord')">
         <h4>Nord</h4> 
-        
         <img src="img/nord.png" >
         </a>
-    </div> 
-    <div class="container">
+
         <a href="#" onclick="GameInit.startGame('dark-elf')">
         <h4>Dark Elf</h4>
         <img src="img/dark-elf.png">
         </a>
-    </div>
-    <div class="container">
+    
+    
         <a href="#" onclick="GameInit.startGame('wood-elf')">
         <h4>Wood Elf</h4>
         <img src="img/wood-elf.png">   
         </a>
-    </div>    
-    <div class="container">
+       
+    
         <a href="#" onclick="GameInit.startGame('argonian')">
         <h4>Argonian</h4> 
         <img src="img/argonian.png"> 
         </a>
-    </div> 
+     
     </div>
 
-    <div class="border">   
-    <div class="container">
+    <div class="row">   
         <a href="#" onclick="GameInit.startGame('high-elf')">
         <h4>High Elf</h4>
         <img src="img/high-elf.png">
         </a>
-    </div>
-    <div class="container">
+    
         <a href="#" onclick="GameInit.startGame('khajiit')">
         <h4>Khajiit</h4>
         <img src="img/khajiit.png">
         </a>
-    </div>
-    <div class="container">
+    
         <a href="#" onclick="GameInit.startGame('orc')">
         <h4>Orc</h4>
         <img src="img/orc.png">
         </a>   
     
-    </div>    
-    <div class="container">
         <a href="#" onclick="GameInit.startGame('breton')" >
         <h4>Breton</h4> 
         <img src="img/breton.png" >
         </a>
+    
     </div>
     </div> 
 </div>
-
+</div>
+<!--------Character Bio--->
 <div id="interface">
-    <section class="container">
         <h2 >Do you wish to pick:</h2> 
         
         <div id="nordBio">
-            <img src="img/nord.png" >
+           <div><img src="img/nord.png">
+           </div> 
+
+           <div id="bioDiv">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
             <p>Speed  <i class="fa fa-arrow-down"></i></p>      
             <button onclick="GameInit.setFight1('nord')">Lets Go!</button>
+            <button onclick="">Go Back</button>
+           </div>
         </div>
         <div id="highElfBio">
             <img src="img/high-elf.png" >
@@ -149,11 +147,10 @@
             <p>Speed  <i class="fa fa-arrow-down"></i></p>
             <button onclick="GameInit.setFight1('orc')">Lets Go!</button>
         </div>
-    </section>
     
 </div>
-
-<div id="fight-scene" class="row">
+<!--------Fight Scene 1--->
+<div id="fight-scene1" class="row">
     <div class="col-12">
 <h2>Snow Dungeon</h2>
 <p>You enter a dungeon where the outside is filled with snow, but you
@@ -163,15 +160,56 @@ cant see what is inside...</p>
 <div class="col-12">
 <img id="avatarImg" src="" >
 <img id="arena1" src="img/snow-dungeon.jpg">
-<img id="enemyImg1" src="">
+<img id="enemyImg1" src=""> 
+</div> 
+<div class="col-12">
+<!--<progress id="health" max="player.health"></progress>
+<progress id="enemyHealth" max="enemy.health"></progress> -->
+<p id="health">Health:</p>
+<p id="enemyHealth">Health:</p>
 </div>
 <div class="col-12">
+<a href="#" onclick="PlayerMoves.calcAttack()">
 <button onclick="" >Fight</button>
-<button onclick="" >Run</button> 
+</a>
+<a>
+<button id="runButton" onclick="" >Run</button> 
+</a>
+<div class="col-12">
+<button id="proceed1" onclick="GameInit.proceed1()">Proceed</button>
+</div>
 </div>
 
+<!---------Treasure Scene-->  
+</div>
+<div id="treasureScene" class="row">
+    <div class="col-12">
+
+    <h2>Congratualtions</h2>
+    <h4> After defeating the monster you encounter a cave filled with treasure
+    you should pick one to help you on your final quest ahead...</h4>
+
+    <div id="inline" class="col-12">
+    <a href="#" onclick="atkBuff()"> <img src="img/ruefull-axe.png"> </a>
+    <p>The Ruefull Axe is a mighty axe that cuts foes with one swipe. Pick this if strength is what you need.</p>
+    </div> 
+
+    <div id="inline" class="col-12">
+    <a href="#" onclick="manaBuff()"> <img src="img/sanguines-rose.png"> </a>
+    <p>The Sanguines Rose is an enchanted staff that bolsters a magic users power.</p>
+    
+    </div>
+    <div id="inline" class="col-12">
+    <a href="#" onclick="defBuff()"> <img src="img/spellbreaker.png"> </a>
+     <p>The SpellBreaker is a Shield that blocks any spells and attacks the user receives. Choose this if defense is what you need.</p>
+    </div>
+
+    </div>
 
 </div>
-
+<!--------Game Scripts--->
+<script src="game.js"></script>
+<script src="player.js"></script>
+<script src="enemy.js"></script>
 </body>
 </html>     

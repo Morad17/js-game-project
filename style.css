@@ -1,27 +1,88 @@
 body {
     background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    font-family: DarkSkyrimFont;
     background-color: #cccccc;
 }
+@font-face {
+  font-family:"DarkSkyrimFont";
+  src: url("font/DarkXShadowX21.ttf") format("truetype");
+}
+/*--------General/Global-css---*/
+
 img {
-    width:200px;
+    width:180px;
     
 }
 
 * {
   box-sizing: border-box;
 }
+button{
+   border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#inline {
+    display: inline-block;
+    width: 32%;
+    color: red;
+    text-align: center;
+}
+/*--------Start Screen---*/
+#characterMenu {
+    text-align: center;
+}
 
-#characterMenu {}
+#characterMenu a{
+    display:inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+ 
 
+/*--------Character Bio--*/
 #interface {
     display:none;
+    text-align: center;
 }
+.fa-arrow-up{
+    color:green;
+}
+.fa-arrow-down{
+    color:red;
+}
+
 #interface h2{
     text-align:center;
 }
-/* ------------- Character Bio ------------- */
+#interface p{
+    color:goldenrod;
+    font-size: 20px;
+}
+#health {
+color: goldenrod;
+font-size: 35px;
+display: inline-block;
+}
+#enemyHealth {
+color: goldenrod;
+font-size: 35px;
+margin-left: 620px;
+display: inline-block;
+
+}
 #nordBio {
     display: none;
+} 
+#nordBio div{
+}
+#bioDiv {
+
 }
 #highElfBio {
     display: none;
@@ -44,22 +105,22 @@ img {
 #orcBio {
     display: none;
 }
-#fight-scene {
+/* ------------- Fight Scene 1 ------------- */
+
+#fight-scene1 {
     display: none;
+}
+#fight-scene1 .col-12{
+
 }
 
 #arena1 {
     width:500px;
 
 }
-.border {
-margin-left: 20px;
-margin-top: 20px;
+#treasureScene{
+    display: none;
 }
-.container {
-    display:inline-block;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: center;
+#proceed1{
+    display:none;
 }
- 

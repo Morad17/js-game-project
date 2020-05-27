@@ -1,9 +1,9 @@
 let enemy;
 
-function Enemy(raceType, attack, defence, mana, speed, health) {
+function Enemy(raceType, attack, block, mana, speed, health) {
     this.raceType = raceType;
     this.attack = attack;
-    this.defence = defence;
+    this.block = block;
     this.mana = mana;
     this.speed = speed; 
     this.health = health;
