@@ -77,12 +77,18 @@ let GameInit = {
                  break;
             case "argonian" :
                  document.getElementById('avatarImg').src = 'img/argonian.png'; break;  
-                };
+                }; }
+
                 //create enemy
+            , genEnemy: function() {
+
+            document.getElementById("fightButton").style.display = 'none'
+            document.getElementById("runButton").style.display = 'none'
+            
             let enemy00 = new Enemy("bear", 70, 10, 0, 20, 230)
             let enemy01 = new Enemy("assassin", 90, 10, 0, 20, 230)
             let enemy02 = new Enemy("draugr", 80, 10, 0, 20, 230)
-             
+            
                 //random select enemy
             let chooseRandomEnemy = Math.floor(Math.random() * 3);
             switch (chooseRandomEnemy) {
@@ -101,9 +107,9 @@ let GameInit = {
                     break;
 
                     
-            }
+            }}
             
-            }, proceed1: function() {
+            , proceed1: function() {
                 document.getElementById("fight-scene1").style.display = 'none';
                 document.getElementById("treasureScene").style.display = 'block';
 

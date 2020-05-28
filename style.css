@@ -1,17 +1,22 @@
-body {
-    background-image: url("img/background.jpg");
-    background-repeat: no-repeat;
-    font-family: DarkSkyrimFont;
-    background-color: #cccccc;
-}
 @font-face {
   font-family:"DarkSkyrimFont";
   src: url("font/DarkXShadowX21.ttf") format("truetype");
 }
-/*--------General/Global-css---*/
 
+body {
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    font-family: "DarkSkyrimFont" !important;
+    background-color: #cccccc;
+}
+html{
+  font-family:"DarkSkyrimFont" !important;
+}
+
+
+/*--------General/Global-css---*/
 img {
-    width:180px;
+    width:220px;
     
 }
 
@@ -23,8 +28,12 @@ button{
   background-color: white;
   color: black;
   padding: 14px 28px;
-  font-size: 16px;
+  font-size: 22px;
   cursor: pointer;
+  text-align: left;
+}
+#atkIcon{
+    color:red;
 }
 #inline {
     display: inline-block;
@@ -42,9 +51,19 @@ button{
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
+    text-decoration: none;
+}
+#characterMenu h1{
+    font-size: 50px;
+    display:inline-block;
+}
+#characterMenu button{
+    display: inline-block;
+}
+#characterMenu h4{
+    color:black;
 }
  
-
 /*--------Character Bio--*/
 #interface {
     display:none;
@@ -113,11 +132,31 @@ display: inline-block;
 #fight-scene1 .col-12{
 
 }
-
+#enemyHealth {
+    position: relative;
+    left: 600px;
+}
+#enemyImg1{
+    position: relative;
+    width:250px;
+    left:480px;
+}
+#avatarImg {
+    width:250px;
+    position: relative;
+    left: 50px;
+}
+#choiceBtns{
+    position:relative;
+    left: 500px;
+}
 #arena1 {
     width:500px;
+    position: relative;
+    left:240px;
 
 }
+/*------Treasure Scene------*/
 #treasureScene{
     display: none;
 }

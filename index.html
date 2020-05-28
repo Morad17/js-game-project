@@ -5,76 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <title>Document</title>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     
 </head>   
 <body> 
 <!--------Home Page--->  
 <!--characters-->
 <div id="characterMenu">
-    <h2>Choose your fighter!</h2>
-   
-    <div class="row">    
-
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">How To Play?</button>
+    <h1>Choose your fighter!</h1>
+    <div class="row justify-content-center">    
+ 
         <a href="#" onclick="GameInit.startGame('nord')">
-        <h4>Nord</h4> 
         <img src="img/nord.png" >
         </a>
 
         <a href="#" onclick="GameInit.startGame('dark-elf')">
-        <h4>Dark Elf</h4>
         <img src="img/dark-elf.png">
         </a>
     
     
         <a href="#" onclick="GameInit.startGame('wood-elf')">
-        <h4>Wood Elf</h4>
         <img src="img/wood-elf.png">   
         </a>
        
     
         <a href="#" onclick="GameInit.startGame('argonian')">
-        <h4>Argonian</h4> 
         <img src="img/argonian.png"> 
         </a>
      
     </div>
 
-    <div class="row">   
+    <div class="row justify-content-center">   
         <a href="#" onclick="GameInit.startGame('high-elf')">
-        <h4>High Elf</h4>
         <img src="img/high-elf.png">
         </a>
     
         <a href="#" onclick="GameInit.startGame('khajiit')">
-        <h4>Khajiit</h4>
         <img src="img/khajiit.png">
         </a>
     
         <a href="#" onclick="GameInit.startGame('orc')">
-        <h4>Orc</h4>
         <img src="img/orc.png">
         </a>   
     
         <a href="#" onclick="GameInit.startGame('breton')" >
-        <h4>Breton</h4> 
         <img src="img/breton.png" >
         </a>
     
     </div>
     </div> 
 </div>
-</div>
+
+<div class="modal fade" id="modal1" >
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Modal title</h5>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+   </div>
 <!--------Character Bio--->
-<div id="interface">
+<div id="interface" class="row ">
         <h2 >Do you wish to pick:</h2> 
         
-        <div id="nordBio">
-           <div><img src="img/nord.png">
+        <div id="nordBio" class="col-12">
+        <div class="row justify-content-center">
+           <div class="col-6"><img src="img/nord.png">
            </div> 
 
-           <div id="bioDiv">
+           <div id="bioDiv" class="col-6">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
@@ -82,6 +93,7 @@
             <p>Speed  <i class="fa fa-arrow-down"></i></p>      
             <button onclick="GameInit.setFight1('nord')">Lets Go!</button>
             <button onclick="">Go Back</button>
+            </div>
            </div>
         </div>
         <div id="highElfBio">
@@ -156,7 +168,21 @@
 <p>You enter a dungeon where the outside is filled with snow, but you
 cant see what is inside...</p>
 </div>
-
+<div class="modal fade" id="modal2" >
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Modal title</h5>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+   </div>
 <div class="col-12">
 <img id="avatarImg" src="" >
 <img id="arena1" src="img/snow-dungeon.jpg">
@@ -168,13 +194,16 @@ cant see what is inside...</p>
 <p id="health">Health:</p>
 <p id="enemyHealth">Health:</p>
 </div>
-<div class="col-12">
+<div id="choiceBtns" class="col-12">
+<a href="#" id="fightButton" onclick="GameInit.genEnemy()">
+<button >Fight<span id="atkIcon">&#9876;</span></button>
+</a>
 <a href="#" onclick="PlayerMoves.calcAttack()">
-<button onclick="" >Fight</button>
+<button >Attack<span id="atkIcon">&#9876;</span></button>
 </a>
 <a>
-<button id="runButton" onclick="" >Run</button> 
-</a>
+<button id="runButton" onclick="" >Run <i class="fa fa-running"></i></button> 
+</a>  
 <div class="col-12">
 <button id="proceed1" onclick="GameInit.proceed1()">Proceed</button>
 </div>
@@ -208,6 +237,9 @@ cant see what is inside...</p>
 
 </div>
 <!--------Game Scripts--->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="game.js"></script>
 <script src="player.js"></script>
 <script src="enemy.js"></script>

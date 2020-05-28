@@ -10,7 +10,7 @@ function Player(raceType, attack, defence, mana, speed, health) {
 
 let PlayerMoves = {
     calcAttack: function() {
-        document.getElementById("runButton").style.display = 'none'
+        
         let getPlayerSpeed = player.speed;
         let getEnemySpeed = enemy.speed;
     //player attacks
@@ -58,7 +58,7 @@ let PlayerMoves = {
     let playerAttackValues  = playerAttack(); 
     let totalDamage = playerAttackValues; 
     enemy.health = enemy.health - totalDamage;
-    alert("you hit the enemy!")
+    document.getElementById("modal2").style.modal = 'show';
     
     
     if (enemy.health <= 0) {
