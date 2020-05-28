@@ -1,13 +1,14 @@
 let player;
-function Player(raceType, attack, defence, mana, speed, health) {
+//player stats
+function Player(raceType, attack, defense, mana, speed, health) {
     this.raceType = raceType;
     this.attack = attack;
-    this.defence = defence;
+    this.defense = defense;
     this.mana = mana;
     this.speed = speed; 
     this.health = health;
     };
-
+//initiates player attack
 let PlayerMoves = {
     calcAttack: function() {
         
@@ -23,8 +24,8 @@ let PlayerMoves = {
         }
         let offsetDmg = Math.floor(Math.random()* 10);
         let calcOutputDmg = calcBaseDmg + offsetDmg;
-        //let enemyBlock = Math.floor(Math.random()* 10)
-        let playerAttackValues = calcOutputDmg;
+        let enemyDef = enemy.defense;
+        let playerAttackValues = calcOutputDmg - enemyDef;
         return playerAttackValues;
                                       }
 
@@ -38,34 +39,27 @@ let PlayerMoves = {
         }
         let offsetEnemyDmg = Math.floor(Math.random()* 10);
         let calcEnemyOutputDmg = calcEnemyBaseDmg + offsetEnemyDmg;
-        //let playerBlock = Math.floor(Math.random()* 10)
-        let enemyAttackValues = calcEnemyOutputDmg;
+        let playerDef = player.defense;
+        let enemyAttackValues = calcEnemyOutputDmg - playerDef;
         return enemyAttackValues;
         console.log(enemyAttackValues);
                                     }
     
-    //View player / enemy health
-    
-     let getPlayerHealth = document.getElementById("health");
+    //View player / enemy health    
+   let getPlayerHealth = document.getElementById("health");
      let getEnemyHealth = document.getElementById("enemyHealth");
-     //getPlayerHealthMax = document.getElementById(health).max;
-     //const getPlayerHealthMax = player.health;
-     //getEnemyHealthMax = document.getElementById(enemyHealth).max;
-     //const getEnemyHealthMax = enemy.health;
-    //initiate attacks 
-     
     if (getPlayerSpeed >= enemy.speed) {
+    $('#modalAtk').modal('show');
     let playerAttackValues  = playerAttack(); 
     let totalDamage = playerAttackValues; 
     enemy.health = enemy.health - totalDamage;
-    document.getElementById("modal2").style.modal = 'show';
-    
     
     if (enemy.health <= 0) {
-            alert("you win!");
+            $('#modalWin').modal('show');
             getPlayerHealth.innerHTML = + player.health;
             getEnemyHealth.innerHTML = +'0'
-            document.getElementById("proceed1").style.display = 'block';
+            document.getElementById("restart").style.display = 'inline-block';
+            return;
     
     } else {
             getEnemyHealth.innerHTML = enemy.health;
@@ -74,28 +68,31 @@ let PlayerMoves = {
             player.health = player.health - totalDamage;
             getPlayerHealth.innerHTML = player.health;
             
-            alert("enemy hit you");
+            $('#modalEnemyAtk').modal('show');
     
     
     if (player.health <= 0) { 
-            alert("you lose!"); 
+            $('#modalLose').modal('show'); 
             getPlayerHealth.innerHTML = + '0' ;
             getEnemyHealth.innerHTML = + enemy.health;
+            return;
     } else {
             getPlayerHealth.innerHTML = player.health;
            }
     }
     } else if (getEnemySpeed >= player.speed) {
+        $('#modalEnemyAtk').modal('show');
         let enemyAttackValues  = enemyAttack(); 
         let totalDamage = enemyAttackValues; 
         player.health = player.health - totalDamage;
-        alert("the enemy hits you!");
+        
     
     
     if (player.health <= 0) {
-            alert("you lose!");
+            $('#modalLose').modal('show');
             getEnemyHealth.innerHTML = + enemy.health;
             getPlayerHealth.innerHTML = + '0' ;
+            return;
     
     } else {
             getPlayerHealth.innerHTML = + player.health;
@@ -105,18 +102,16 @@ let PlayerMoves = {
     
     
     if (enemy.health <= 0) {
-            alert("you win!");
+            $('#modalWin').modal('show');
             getEnemyHealth.innerHTML = + '0';
             getPlayerHealth.innerHTML = + player.health;
-            document.getElementById("proceed1").style.display = 'block';
-
+            document.getElementById("restart").style.display = 'inline-block';
+            return;
     } else {
            getEnemyHealth.innerHTML = + enemy.health;
            }
+     
     } 
-
-
-
     }   
 }
 };

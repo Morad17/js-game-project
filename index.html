@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
     <title>Document</title>
     
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
     
 </head>   
 <body> 
@@ -18,7 +18,7 @@
 <div id="characterMenu">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">How To Play?</button>
     <h1>Choose your fighter!</h1>
-    <div class="row justify-content-center">    
+    <div class="row justify-content-center" id='chHome'>    
  
         <a href="#" onclick="GameInit.startGame('nord')">
         <img src="img/nord.png" >
@@ -40,7 +40,7 @@
      
     </div>
 
-    <div class="row justify-content-center">   
+    <div class="row justify-content-center"id='chHome'>   
         <a href="#" onclick="GameInit.startGame('high-elf')">
         <img src="img/high-elf.png">
         </a>
@@ -57,142 +57,252 @@
         <img src="img/breton.png" >
         </a>
     
-    </div>
     </div> 
-</div>
-
+<!--How To Modal-->
 <div class="modal fade" id="modal1" >
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" >Modal title</h5>
+        <h2 class="modal-title" >Skyrim D&D</h2>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ...
+      <div class="modal-body"><h3>
+      Your task is to get through the dungeon in one piece!
+      </h3><h3>
+      You must first choose you player from the 8 choices, each one has weaknesses and strengths, which you can look up by pressing on them.
+      </h3><h3>
+      Follow the instructions and try to get to the end, where a final boss is waiting for you, and challenge it if you can...</h3>
       </div>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
    </div>
+</div>
 <!--------Character Bio--->
-<div id="interface" class="row ">
+<div id="interface" class="row justify-content-center">
+        <div class="col-12">
         <h2 >Do you wish to pick:</h2> 
-        
+        <div class="row">
+        <!--Each Character Profile-->
         <div id="nordBio" class="col-12">
-        <div class="row justify-content-center">
-           <div class="col-6"><img src="img/nord.png">
+        <div class="row ">
+        <div class="col-3">
+        <p>Nords are a native race to skyrim. They are brave, fearless and
+        strong.</p>
+        </div>
+           <div class="col-6"><img src="img/nord.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('nord')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
            </div> 
 
-           <div id="bioDiv" class="col-6">
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>      
-            <button onclick="GameInit.setFight1('nord')">Lets Go!</button>
-            <button onclick="">Go Back</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
             </div>
            </div>
         </div>
-        <div id="highElfBio">
-            <img src="img/high-elf.png" >
+        <div id="highElfBio" class="col-12">
+        <div class="row ">
+        <div class="col-3">
+        <p>Also known as Altmer, High Elves are the most gifted in SpellCraft. They have high mana reserves, but are frail as a result of this.</p>
+        </div>
+           <div class="col-6"><img src="img/high-elf.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('high-elf')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
+           </div> 
+
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            <button onclick="GameInit.setFight1('high-elf')">Lets Go!</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
+            </div>
+           </div>
         </div>
-        <div id="darkElfBio">
-            <img src="img/dark-elf.png" >
+        <div id="darkElfBio" class="col-12">
+        <div class="row ">
+        <div class="col-3">
+        <p>Dark Elves, also known as Dunmer, are known for their stealth and magic skills. They boast a lot of knowledge in the arcane arts, however are slightly frail.</p>
+        </div>
+           <div class="col-6"><img src="img/dark-elf.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('dark-elf')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
+           </div> 
+
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            <button onclick="GameInit.setFight1('dark-elf')">Lets Go!</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
+            </div>
+           </div>
         </div>
-        <div id="woodElfBio">
-            <img src="img/wood-elf.png" >
+        <div id="woodElfBio" class="col-12">
+        <div class="row ">
+        <div class="col-3">
+        <p>Wood Elves, or Bosmer are adept rangers, that live in the forest. They are a very agile and mobile race that are mainly suited to a ranger play style.</p>
+        </div>
+           <div class="col-6"><img src="img/wood-elf.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('wood-elf')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
+           </div> 
+
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            <button onclick="GameInit.setFight1('wood-elf')">Lets Go!</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
+            </div>
+           </div>
         </div>
-        <div id="bretonBio">
-            <img src="img/breton.png" >
+        <div id="bretonBio" class="col-12">
+        <div class="row ">
+        <div class="col-3">
+        <p>The Breton are a hardy Human race, that are excellent makes with high magic resistance. This comes with low health and agility.</p>
+        </div>
+           <div class="col-6"><img src="img/breton.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('breton')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
+           </div> 
+
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            <button onclick="GameInit.setFight1('breton')">Lets Go!</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
+            </div>
+           </div>
         </div>
-        <div id="khajiitBio">
-            <img src="img/khajiit.png" >
+        <div id="khajiitBio" class="col-12">
+        <div class="row ">
+        <div class="col-3">
+        <p>The Khajiit are a feline like race, that are highly intellegent,
+        agile and quick. They use their claws to attack. This speed comes at a cost to their health.</p>
+        </div>
+           <div class="col-6"><img src="img/khajiit.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('khajiit')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
+           </div> 
+
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            <button onclick="GameInit.setFight1('khajiit')">Lets Go!</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
+            </div>
+           </div>
         </div>
-        <div id="argonianBio">
-            <img src="img/argonian.png" >
+        <div id="argonianBio" class="col-12">
+        <div class="row ">
+        <div class="col-3">
+        <p>The Argonians are lizard like creatures that inhabit swamps. They
+        have high vitality and are more agile than other races, however they 
+        arent as naturally strong.</p>
+        </div>
+           <div class="col-6"><img src="img/argonian.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('argonian')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
+           </div> 
+
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            <button onclick="GameInit.setFight1('argonian')">Lets Go!</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
+            </div>
+           </div>
         </div>
-        <div id="orcBio">
-            <img src="img/orc.png" >
+        <div id="orcBio" class="col-12">
+        <div class="row ">
+        <div class="col-3">
+        <p>The Orc, or Orsimer, are a feared race that are strong and sturdy.
+        They have high health and strength, but lack in speed and agility.</p>
+        </div>
+           <div class="col-6"><img src="img/orc.png"><div>
+           <button id="letsGo" onclick="GameInit.setFight1('orc')">Lets Go!</button>
+            <button onclick="reloadPage()">Go Back</button>
+            </div>
+           </div> 
+
+           <div id="bioDiv" class="col-3">
             <p>Health <i class="fa fa-arrow-up"></i></p>
             <p>Attack <i class="fa fa-arrow-up"></i></p>
             <p>Defense<i class="fa fa-arrow-up"></i></p>
             <p>Mana   <i class="fa fa-arrow-down"></i></p>
-            <p>Speed  <i class="fa fa-arrow-down"></i></p>
-            <button onclick="GameInit.setFight1('orc')">Lets Go!</button>
+            <p>Speed  <i class="fa fa-arrow-down"></i></p> 
+           </div>
+            <div class="row justify-content-center"> 
+                <div class="col-12"> 
+            
+            </div>   
+            </div>
+           </div>
         </div>
-    
+        </div>
+    </div>
 </div>
 <!--------Fight Scene 1--->
 <div id="fight-scene1" class="row">
-    <div class="col-12">
-<h2>Snow Dungeon</h2>
-<p>You enter a dungeon where the outside is filled with snow, but you
-cant see what is inside...</p>
-</div>
-<div class="modal fade" id="modal2" >
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" >Modal title</h5>
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-   </div>
 <div class="col-12">
 <img id="avatarImg" src="" >
 <img id="arena1" src="img/snow-dungeon.jpg">
 <img id="enemyImg1" src=""> 
 </div> 
 <div class="col-12">
-<!--<progress id="health" max="player.health"></progress>
-<progress id="enemyHealth" max="enemy.health"></progress> -->
-<p id="health">Health:</p>
-<p id="enemyHealth">Health:</p>
+<p id="health">Health</p>
+<p id="enemyHealth">Health</p>
 </div>
 <div id="choiceBtns" class="col-12">
 <a href="#" id="fightButton" onclick="GameInit.genEnemy()">
@@ -202,41 +312,87 @@ cant see what is inside...</p>
 <button >Attack<span id="atkIcon">&#9876;</span></button>
 </a>
 <a>
-<button id="runButton" onclick="" >Run <i class="fa fa-running"></i></button> 
+<button onclick="reloadPage()" id="runButton">Run <i class="fa fa-running"></i></button> 
 </a>  
-<div class="col-12">
-<button id="proceed1" onclick="GameInit.proceed1()">Proceed</button>
+<a>
+<button id="restart" onclick="reloadPage()">Restart</button></a>
 </div>
-</div>
-
-<!---------Treasure Scene-->  
-</div>
-<div id="treasureScene" class="row">
-    <div class="col-12">
-
-    <h2>Congratualtions</h2>
-    <h4> After defeating the monster you encounter a cave filled with treasure
-    you should pick one to help you on your final quest ahead...</h4>
-
-    <div id="inline" class="col-12">
-    <a href="#" onclick="atkBuff()"> <img src="img/ruefull-axe.png"> </a>
-    <p>The Ruefull Axe is a mighty axe that cuts foes with one swipe. Pick this if strength is what you need.</p>
-    </div> 
-
-    <div id="inline" class="col-12">
-    <a href="#" onclick="manaBuff()"> <img src="img/sanguines-rose.png"> </a>
-    <p>The Sanguines Rose is an enchanted staff that bolsters a magic users power.</p>
-    
+<!--Modal Actions-->
+<div class="modal fade" id="dEntrance" >
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" >Snow Dungeon</h2>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><h3>
+      You enter a dungeon where the outside is filled with snow, but you
+    cant see what is inside...
+      </h3><h3>
+      </h3><h3>
+      Follow the instructions and defeat the monster in the dungeon...</h3>
+      </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
-    <div id="inline" class="col-12">
-    <a href="#" onclick="defBuff()"> <img src="img/spellbreaker.png"> </a>
-     <p>The SpellBreaker is a Shield that blocks any spells and attacks the user receives. Choose this if defense is what you need.</p>
-    </div>
+   </div>
 
+<div class="modal fade" id="modalAtk" >
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" >You Attack The Enemy!</h3>
+      </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
+   </div>
+   <div class="modal fade" id="modalEnemyAtk" >
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" >The Enemy Attacks You!</h3>
+      </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+   </div>
+   
+   <div class="modal fade" id="modalLose" >
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" >You Lose!</h3>
+      </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+   </div>
+<div class="modal fade" id="modalWin" >
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" >You Win!</h2>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><h3>
+      You have bested the dungeon and defeated the moster!
+      </h3><h3>You can start again and choose a different character
+      </h3>
+      </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+   </div>
 
-</div>
+
 <!--------Game Scripts--->
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

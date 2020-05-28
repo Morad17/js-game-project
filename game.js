@@ -12,19 +12,19 @@ let GameInit = {
             case "nord":
                 player = new Player(raceType, 100, 30, 0, 40, 200);
             case "high-elf":
-                player = new Player(raceType, 100, 30, 0, 40, 200);
+                player = new Player(raceType, 40, 70, 0, 50, 150);
             case "dark-elf":
-                player = new Player(raceType, 10, 30, 90, 40, 200);
+                player = new Player(raceType, 10, 30, 90, 40, 140);
             case "wood-elf":
-                player = new Player(raceType, 100, 30, 0, 40, 200);
+                player = new Player(raceType, 80, 20, 0, 60, 180);
             case "breton": 
-                player = new Player(raceType, 0, 30, 1, 40, 200);
+                player = new Player(raceType, 10, 30, 100, 40, 180);
             case "khajiit":
-                player = new Player(raceType, 100, 30, 0, 40, 200);
+                player = new Player(raceType, 110, 10, 0, 40, 160);
             case "orc" : 
-                player = new Player(raceType, 100, 30, 0, 40, 200);
+                player = new Player(raceType, 120, 40, 0, 10, 190);
             case "argonian" :
-                player = new Player(raceType, 100, 30, 0, 40, 200);
+                player = new Player(raceType, 80, 40, 0, 50, 170);
                             };          }
             //Character Bio
             ,chProfile: function(raceType){
@@ -56,6 +56,7 @@ let GameInit = {
             ,setFight1: function(raceType){
                 document.getElementById('interface').style.display = 'none';
                 document.getElementById('fight-scene1').style.display = 'inline-block';
+                $('#dEntrance').modal('show');
                 switch(raceType) {
             case "nord":
                  document.getElementById('avatarImg').src = 'img/nord.png';
@@ -82,12 +83,13 @@ let GameInit = {
                 //create enemy
             , genEnemy: function() {
 
-            document.getElementById("fightButton").style.display = 'none'
-            document.getElementById("runButton").style.display = 'none'
+            document.getElementById("fightButton").style.display = 'none';
+            document.getElementById("runButton").style.display = 'none';
+            document.getElementById("enemyHealth").style.display = 'inline-block';
             
-            let enemy00 = new Enemy("bear", 70, 10, 0, 20, 230)
-            let enemy01 = new Enemy("assassin", 90, 10, 0, 20, 230)
-            let enemy02 = new Enemy("draugr", 80, 10, 0, 20, 230)
+            let enemy00 = new Enemy("bear", 70, 40, 0, 20, 230)
+            let enemy01 = new Enemy("assassin", 130, 10, 0, 20, 130)
+            let enemy02 = new Enemy("draugr", 80, 20, 0, 20, 210)
             
                 //random select enemy
             let chooseRandomEnemy = Math.floor(Math.random() * 3);
@@ -108,19 +110,12 @@ let GameInit = {
 
                     
             }}
-            
-            , proceed1: function() {
-                document.getElementById("fight-scene1").style.display = 'none';
-                document.getElementById("treasureScene").style.display = 'block';
-
-            }
-
-        
-        
-        
-     
+ 
     };
-
+    //Home button
+    function reloadPage(){
+        location.reload(true);
+    }
     
     
     

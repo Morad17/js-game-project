@@ -12,7 +12,9 @@ body {
 html{
   font-family:"DarkSkyrimFont" !important;
 }
-
+.modal {
+    text-align:center;
+}
 
 /*--------General/Global-css---*/
 img {
@@ -24,8 +26,8 @@ img {
   box-sizing: border-box;
 }
 button{
-   border: 2px solid black;
-  background-color: white;
+   border: 7px ridge #7f6515;
+  background-color: goldenrod;
   color: black;
   padding: 14px 28px;
   font-size: 22px;
@@ -43,7 +45,10 @@ button{
 }
 /*--------Start Screen---*/
 #characterMenu {
-    text-align: center;
+
+}
+#chHome{
+    margin-top:25px;
 }
 
 #characterMenu a{
@@ -56,18 +61,30 @@ button{
 #characterMenu h1{
     font-size: 50px;
     display:inline-block;
+    
 }
 #characterMenu button{
     display: inline-block;
+    margin:5px 200px 0px 280px;
 }
-#characterMenu h4{
-    color:black;
+#modal1{
+    text-align:center;
 }
- 
+.modal-title h3{
+    font-weight:600;
+    font-size: 80px;
+}
+.modal-body h3{
+    font-weight: 600;
+    margin-bottom:20px;
+}
+
 /*--------Character Bio--*/
 #interface {
     display:none;
     text-align: center;
+    margin-left: 80px;
+    margin-right: 10px;
 }
 .fa-arrow-up{
     color:green;
@@ -78,31 +95,53 @@ button{
 
 #interface h2{
     text-align:center;
+    margin-top: 20px;
+    margin-bottom:40px;
+    font-size: 50px;
 }
-#interface p{
-    color:goldenrod;
-    font-size: 20px;
+.col-3 p{
+    font-weight: 600;
+    color:black;
+    font-size: 28px;
+    line-height: 1.7;
+    background-color:goldenrod;
+    border: 7px ridge #7f6515;
+}
+
+#interface .col-6 button{
+    margin-top:40px;
+}
+#letsGo{
+    margin-right:120px;
+}
+#interface i{
+    font-size: 30px;
+    margin-left:20px;
 }
 #health {
-color: goldenrod;
+background-color:goldenrod;
 font-size: 35px;
 display: inline-block;
+margin:30px 0px 0px 90px;
+border: 4px ridge #7f6515;
+padding: 10px 40px;
 }
 #enemyHealth {
-color: goldenrod;
+background-color: goldenrod;
 font-size: 35px;
-margin-left: 620px;
-display: inline-block;
-
+margin-left: 400px;
+display: none;
+border: 4px ridge #7f6515;
+padding: 10px 40px;
 }
 #nordBio {
     display: none;
 } 
-#nordBio div{
-}
-#bioDiv {
 
+#bioDiv {
+line-height: 3.5;
 }
+
 #highElfBio {
     display: none;
 }
@@ -156,10 +195,8 @@ display: inline-block;
     left:240px;
 
 }
-/*------Treasure Scene------*/
-#treasureScene{
-    display: none;
-}
-#proceed1{
+#restart{
     display:none;
+    position: relative;
+    left: 190px;
 }
