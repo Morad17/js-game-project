@@ -168,9 +168,6 @@ line-height: 3.5;
 #fight-scene1 {
     display: none;
 }
-#fight-scene1 .col-12{
-
-}
 #enemyHealth {
     position: relative;
     left: 600px;
@@ -199,4 +196,8 @@ line-height: 3.5;
     display:none;
     position: relative;
     left: 190px;
+}
+.row{
+    margin-right: 0;
+    margin-left: 0;
 }
