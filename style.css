@@ -5,7 +5,7 @@
 
 body {
     background-image: url("img/background.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     font-family: "DarkSkyrimFont" !important;
     background-color: #cccccc;
 }
@@ -44,10 +44,8 @@ button{
     text-align: center;
 }
 /*--------Start Screen---*/
-#characterMenu {
 
-}
-#chHome{
+#characterMenu, #characterMenu .row{
     margin-top:25px;
 }
 
@@ -200,4 +198,32 @@ line-height: 3.5;
 .row{
     margin-right: 0;
     margin-left: 0;
+}
+
+/* --------Media--Query------*/
+@media screen and (max-width:768px){
+
+#characterMenu img{
+        width: 180px;
+    }
+
+#characterMenu .col-sm-4{
+    padding: 5px 5px;
+}
+
+#characterMenu a{
+    display:inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+#characterMenu h1{
+    text-align: center;
+}
+#characterMenu button{
+    margin: 15px;
+}
+
 }

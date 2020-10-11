@@ -17,49 +17,51 @@
 <!--characters-->
 
 
-<div id="characterMenu">
+<div id="characterMenu"> 
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">How To Play?</button>
     <h1>Choose your fighter!</h1>
-    <div class="row justify-content-center" id='chHome'>    
- 
-        <a href="#" onclick="GameInit.startGame('nord')">
-        <img src="img/nord.png" >
-        </a>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-sm-4">    
 
-        <a href="#" onclick="GameInit.startGame('dark-elf')">
-        <img src="img/dark-elf.png">
-        </a>
-    
-    
-        <a href="#" onclick="GameInit.startGame('wood-elf')">
-        <img src="img/wood-elf.png">   
-        </a>
-       
-    
-        <a href="#" onclick="GameInit.startGame('argonian')">
-        <img src="img/argonian.png"> 
-        </a>
-     
-    </div>
+                <a href="#" onclick="GameInit.startGame('nord')">
+                <img src="img/nord.png" >
+                </a>
 
-    <div class="row justify-content-center"id='chHome'>   
-        <a href="#" onclick="GameInit.startGame('high-elf')">
-        <img src="img/high-elf.png">
-        </a>
-    
-        <a href="#" onclick="GameInit.startGame('khajiit')">
-        <img src="img/khajiit.png">
-        </a>
-    
-        <a href="#" onclick="GameInit.startGame('orc')">
-        <img src="img/orc.png">
-        </a>   
-    
-        <a href="#" onclick="GameInit.startGame('breton')" >
-        <img src="img/breton.png" >
-        </a>
-    
-    </div> 
+                <a href="#" onclick="GameInit.startGame('dark-elf')">
+                <img src="img/dark-elf.png">
+                </a>
+            
+            
+                <a href="#" onclick="GameInit.startGame('wood-elf')">
+                <img src="img/wood-elf.png">   
+                </a>
+            
+            
+                <a href="#" onclick="GameInit.startGame('argonian')">
+                <img src="img/argonian.png"> 
+                </a>
+            </div>
+        </div>   
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-sm-4">
+                <a href="#" onclick="GameInit.startGame('high-elf')">
+                <img src="img/high-elf.png">
+                </a>
+            
+                <a href="#" onclick="GameInit.startGame('khajiit')">
+                <img src="img/khajiit.png">
+                </a>
+            
+                <a href="#" onclick="GameInit.startGame('orc')">
+                <img src="img/orc.png">
+                </a>   
+            
+                <a href="#" onclick="GameInit.startGame('breton')" >
+                <img src="img/breton.png" >
+                </a>
+            </div>    
+        </div>
+</div> 
 <!--How To Modal-->
 <div class="modal fade" id="modal1" >
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
